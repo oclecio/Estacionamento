@@ -1,0 +1,30 @@
+﻿@model Estacionamento.Models.ControleEstacionamento
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 align="center">Registrar Entrada/Saída</h1>
+<p align="right" >
+    <a class="btn btn-warning" asp-action="Index"><i class="fa fa-clipboard-list"></i><span>Listar Entradas/Saídas</span></a>
+</p>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Consulta">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Placa" class="control-label"></label>
+                <input asp-for="Placa" class="form-control text-center text-uppercase placa" />
+                <span asp-validation-for="Placa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Registrar entrada ou saída" class="btn btn-info w-100" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

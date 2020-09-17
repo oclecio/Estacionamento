@@ -1,0 +1,69 @@
+﻿@model IEnumerable<Estacionamento.Models.ControleEstacionamento>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 align="center">Lista de Entradas/Saídas</h1>
+
+<p align="right">
+    <a class="btn btn-info" asp-action="Consulta">
+        <i class="fa fa-car"></i>
+        <span>Registrar Entrada/Saída</span>
+    </a>
+</p>
+<hr />
+<div class="table-responsive">
+    <table class="table table-bordered table-hover table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Placa)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataEntrada)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataSaida)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ValorCobrado)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TempoTotal)
+                </th>
+                <th align="right" width="160">Ações
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Placa)
+                    </td>
+                    <td>
+                        @item.DataEntrada.ToString("HH:mm:ss")
+                        <br />
+                        <small>@item.DataEntrada.ToString("dd/MM/yyyy")</small>
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataSaida)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ValorCobrado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TempoTotal)
+                    </td>
+                    <td align="right">
+                        @if (!item.DataSaida.HasValue)
+                        {
+                            <a asp-action="Saida" asp-route-placa="@item.Placa" class="btn btn-primary tooltips"><i class="fa fa-sign-out-alt"></i>Marcar saída</a>
+                        }
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

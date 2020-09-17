@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\Oclécio\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Oclécio\\.nuget\\packages"
+    ]
+  }
+}

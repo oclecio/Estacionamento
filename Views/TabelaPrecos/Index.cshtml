@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Estacionamento.Models.TabelaPrecos>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h1 align="center">Tabela de preços</h1>
+
+<p align="right">
+    <a class="btn btn-info" asp-action="Create">
+        <i class="fa fa-plus-square"></i>
+        <span>Criar valores</span>
+    </a>
+</p>
+<hr />
+<div class="table-responsive">
+    <table class="table table-bordered table-hover table-striped">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataInicio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DataFim)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PrecoInicial)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PrecoAdicional)
+                </th>
+                <th align="right" width="130">Ações
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataInicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataFim)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PrecoInicial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PrecoAdicional)
+                </td>
+                <td align="right">
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger tooltips"><i class="fa fa-trash-alt"></i><span>Deletar</span></a>
+</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>

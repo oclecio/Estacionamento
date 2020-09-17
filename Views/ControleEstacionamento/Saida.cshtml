@@ -1,0 +1,47 @@
+﻿@model Estacionamento.Models.ControleEstacionamento
+
+@{
+    ViewData["Title"] = "Saida";
+}
+
+<h1 align="center">Saída do veículo</h1>
+
+<p align="right">
+    <a class="btn btn-warning" asp-action="Index"><i class="fa fa-clipboard-list"></i><span>Listar Entradas/Saídas</span></a>
+</p>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Placa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Placa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataEntrada)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataEntrada)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataSaida)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataSaida)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TempoTotal)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TempoTotal)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ValorCobrado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ValorCobrado)
+        </dd>
+    </dl>
+</div>
